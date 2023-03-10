@@ -48,6 +48,11 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
+# set gaps between windows
+gaps inner 10
+gaps outer 10
+
+
 # language
 
 exec_always "setxkbmap -model pc104 -layout us,ua -variant ,, -option grp:alt_shift_toggle"
