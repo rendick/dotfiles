@@ -16,7 +16,7 @@
 
 </br>
 
-<img align="right" src="https://i.imgur.com/PtsSrxH.png" width="600px">
+<img align="right" src="https://i.imgur.com/PtsSrxH.png" width="500px">
 
 Yo, guys. This`s my Arch Linux + i3-gaps ricing setup. Soon I will make the installation file/docs for people. This repository is always being updated, so stay tuned!
 
