@@ -27,6 +27,8 @@ Yo, guys. This`s my Arch Linux + i3-gaps ricing setup. Soon I will make the inst
 - Compositor: [Picom](https://github.com/yshui/picom)
 - Terminal & File Manager: [alacritty](https://alacritty.org/)
 
+- Polybar Themes: [themes](https://github.com/adi1090x/polybar-themes)
+
 </br>
 </br>
 
