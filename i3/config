@@ -34,6 +34,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# gtk
+
+exec --no-startup-id "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-One-Dark'"
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -49,9 +53,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # set gaps between windows
-gaps inner 10
-gaps outer 10
-
+gaps inner 7
+gaps outer 7
 
 # language
 
@@ -59,7 +62,7 @@ exec_always "setxkbmap -model pc104 -layout us,ua -variant ,, -option grp:alt_sh
 
 # borders
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 0 
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -73,7 +76,7 @@ bindsym Print exec flameshot gui
 
 # picom
 
-exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
+exec --no-startup-id picom -b --config ~/.config/picom.conf
 
 # wallpaper
 
