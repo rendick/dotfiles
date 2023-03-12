@@ -39,6 +39,5 @@ Yo, guys. This`s my Arch Linux + i3-gaps ricing setup. Soon I will make the inst
 
 <p align="center"> 
   <a href="https://discord.gg/bDrqWVKnS4"><img src="https://img.shields.io/discord/1022444850089570364?label=Discord&color=67b0e8&labelColor=22292b&style=for-the-badge"></a>
-  <a href="https://matrix.to/#/#fossukraine:matrix.org"><img src="https://img.shields.io/matrix/fossukraine:matrix.org?label=Matrix&color=67b0e8&labelColor=22292b&style=for-the-badge"></a>
 </p>
 
