@@ -1,34 +1,32 @@
 set $mod Mod4
+floating_modifier $mod
+tiling_drag modifier titlebar
 
 font pango:monospace 12
 
 exec --no-startup-id dex --autostart --environment i3
-
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
 exec --no-startup-id nm-applet
 
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-floating_modifier $mod
-
-tiling_drag modifier titlebar
-
 bindsym $mod+Return exec alacritty
-
 bindsym Print exec flameshot gui
-
-exec_always "setxkbmap -model pc104 -layout us,ua,ru -variant ,, -option grp:alt_shift_toggle"
-
+exec_always "setxkbmap -model pc104 -layout pl,ua,ru -variant ,, -option grp:alt_shift_toggle"
 exec_always --no-startup-id feh --randomize --bg-fill ~/.config/wp.png
-
 bindsym $mod+Shift+q kill
+bindsym $mod+d exec --no-startup-id rofi -show run
+exec_always --no-startup-id $HOME/.config/i3/polybar.sh
+default_border pixel 3
+client.focused #3c424d #3c424d #FFFFFF #285577
 
-bindsym $mod+d exec --no-startup-id dmenu_run
+gaps outer 10
+gaps inner 10
+
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
@@ -50,9 +48,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 bindsym $mod+h split h
-
 bindsym $mod+v split v
-
 bindsym $mod+f fullscreen toggle
 
 bindsym $mod+s layout stacking
@@ -60,9 +56,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 bindsym $mod+Shift+space floating toggle
-
 bindsym $mod+space focus mode_toggle
-
 bindsym $mod+a focus parent
 
 set $ws1 "1"
@@ -98,12 +92,10 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
-
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
@@ -120,8 +112,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-bar {
-        status_command i3status
-		position top
-}
