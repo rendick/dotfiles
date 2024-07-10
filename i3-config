@@ -17,10 +17,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod+Return exec alacritty
 bindsym Print exec flameshot gui
 exec_always "setxkbmap -model pc104 -layout pl,ua,ru -variant ,, -option grp:alt_shift_toggle"
-exec_always --no-startup-id feh --randomize --bg-fill ~/.config/wp.png
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id rofi -show run
-exec_always --no-startup-id $HOME/.config/i3/polybar.sh
+bindsym $mod+d exec --no-startup-id dmenu_run
+exec_always --no-startup-id feh --randomize --bg-fill ~/.config/wp.png
+exec_always --no-startup-id sh ~/.config/i3/polybar.sh
 default_border pixel 3
 client.focused #3c424d #3c424d #FFFFFF #285577
 
